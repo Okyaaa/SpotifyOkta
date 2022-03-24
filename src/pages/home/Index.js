@@ -1,16 +1,14 @@
 import CardSong from "../../component/CardSong";
 import "./Home.css";
+import data from "../../data/data.js";
 
 function Index()  {
     return (
-      <div className="Home" >
-        <h1>Exercise</h1>
-        <div className="searchBar" >
-          <input type="search" id="search" name="search"></input>
-          <input type="submit"></input>
-        </div>
-        <img src="https://media.giphy.com/media/Vh8pbGX3SGRwFDh3V0/source.gif"></img>
-      </div>
+      <CardSong 
+        url={data.album.images[0].url}
+        albumName={data.album.name}
+        artistsName={data.album.artists[0].name}
+      />
     );
 }
 
