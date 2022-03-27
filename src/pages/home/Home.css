@@ -1,8 +1,6 @@
-.Home {
+.card-song {
     text-align: center;
+    align-items: center;
     flex-direction: column;
-  }
-
-.search-bar {
-    margin-bottom: 40px;
+    display: flex;
 }
