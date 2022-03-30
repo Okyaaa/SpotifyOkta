@@ -12,7 +12,7 @@ function CardSong(props) {
         <button
           className="buttonSelect"
           type="button"
-          onclick="alert('Hello world!')"
+          onClick={console.log("Hello")}
         >
           Select
         </button>

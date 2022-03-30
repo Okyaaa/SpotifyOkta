@@ -20,7 +20,7 @@
 }
 
 .text-component {
-    margin-top: 20px;
+    margin-top: 4px;
 }
 
 .text-component p {
@@ -29,6 +29,7 @@
 
 .album {
     font-weight: 500;
+    font-size: 16px;
 }
 
 .buttonSelect {
