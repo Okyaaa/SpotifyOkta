@@ -9,12 +9,8 @@ function CardSong(props) {
         <p>{props.artistName}</p>
       </div>
       <div className="button-component">
-        <button
-          className="buttonSelect"
-          type="button"
-          onClick={console.log("Hello")}
-        >
-          Select
+        <button className="buttonSelect" type="button" onClick={() => props.onClick (props.isSelected)}>
+          {props.nameOfButton}
         </button>
       </div>
     </div>
