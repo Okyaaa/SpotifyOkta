@@ -1,10 +1,10 @@
 import './App.css';
-import Index from './pages/spotify/Index';
+import Spotify from './pages/spotify/Spotify';
 
 function App() {
   return (
     <div className='App'>
-      <Index/>
+      <Spotify/>
     </div>
   );
 }
