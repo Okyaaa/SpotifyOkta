@@ -226,13 +226,4 @@ function Spotify() {
   );
 }
 
-{
-  /* <PlaylistCard
-  url={item.track.album.images[0].url}
-  alt="Not loaded"
-  albumName={item.track.album.name}
-  artistName={item.track.artists[0].name}
-/>; */
-}
-
 export default Spotify;
