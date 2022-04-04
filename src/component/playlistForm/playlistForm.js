@@ -16,7 +16,7 @@ const PlaylistForm = ({
           id="title"
           name="title"
           onChange={handleChangeTitle}
-          //   minLength={10}
+            minLength={10}
           required
         />
       </div>
