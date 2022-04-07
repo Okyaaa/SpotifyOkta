@@ -1,6 +1,11 @@
-.card-song {
+.Home {
     text-align: center;
     align-items: center;
     flex-direction: column;
     display: flex;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
 }

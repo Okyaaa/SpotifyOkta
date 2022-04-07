@@ -7,6 +7,13 @@ import PlaylistForm from "../../component/playlistForm/playlistForm";
 import axios from "axios";
 import PlaylistCard from "../../component/playlistCard/playlistCard";
 import { useSelector, useDispatch } from "react-redux";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 import { saveToken } from "../../redux/token-actions";
 
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
@@ -15,9 +22,7 @@ const REDIRECT_URI = "http://localhost:3000/callback/";
 const SCOPE = "playlist-modify-private";
 const AUTH_URL = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&response_type=token&show_dialog=true`;
 const BASE_URL = `https://api.spotify.com/v1`;
-const getToken = new URLSearchParams(window.location.hash).get(
-  "#access_token"
-);
+const getToken = new URLSearchParams(window.location.hash).get("#access_token");
 
 function Spotify() {
   const { searchResult, handleChange, onSearch } = useSearch();
@@ -35,8 +40,6 @@ function Spotify() {
   const dispatch = useDispatch();
   dispatch(saveToken(getToken));
 
-  console.log("access-token = ",access_token)
-  // const [userId, setUserId] = useState();
   let userId = "";
   let playlistId = "";
   let newPlaylistId = "";
@@ -78,8 +81,8 @@ function Spotify() {
     newPlaylistId = check.playlistId.replace("spotify:playlist:", "");
     viewPlaylist();
     setCheck({
-      emptyView: false
-    })
+      emptyView: false,
+    });
   };
 
   const getUserId = async () => {
@@ -161,12 +164,15 @@ function Spotify() {
     }
   };
 
+  const isLoggedOut = () => {
+    localStorage.removeItem("isLoggedIn");
+    window.location = "http://localhost:3000/";
+  };
+
   return (
     <div className="container">
       <div className="link-toSpotify">
-        <a className="title" href={AUTH_URL}>
-          Click this text to Login
-        </a>
+        <button onClick={isLoggedOut}>Logout</button>
       </div>
       <div className="formAndView">
         <div className="create-playlist">
@@ -214,7 +220,6 @@ function Spotify() {
               <p>Playlist will show after create playlist :D</p>
             ) : (
               newPlaylist?.viewPlaylist?.tracks?.items?.map((item) => {
-                
                 return (
                   <PlaylistCard
                     url={item.track.album.images[0].url}
