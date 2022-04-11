@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
 export default function useSearch() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const access_token = useSelector((state) => state.token.value);
+  const accessToken = useSelector((state) => state.token.value);
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
   const onSearch = (event) => {
-    console.log(access_token);
-    if (access_token != '') {
+    console.log(accessToken);
+    if (accessToken !== "") {
       axios
         .get("https://api.spotify.com/v1/search", {
           headers: {
-            Authorization: `Bearer ${access_token}`,
+            Authorization: `Bearer ${accessToken}`,
           },
           params: {
             q: `${searchQuery}`,

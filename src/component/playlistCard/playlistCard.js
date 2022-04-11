@@ -1,12 +1,16 @@
+import React from "react";
 import "./PlaylistCard.css";
 
 function PlaylistCard(props) {
+  const {
+    url, alt, albumName, artistName,
+  } = props;
   return (
     <div className="Card">
-      <img src={props.url} alt={props.alt}></img>
+      <img src={url} alt={alt} />
       <div className="text-component">
-        <p className="album">{props.albumName}</p>
-        <p>{props.artistName}</p>
+        <p className="album">{albumName}</p>
+        <p>{artistName}</p>
       </div>
     </div>
   );
