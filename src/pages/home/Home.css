@@ -1,11 +1,24 @@
 .Home {
     text-align: center;
     align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-content: space-between;
     flex-direction: column;
     display: flex;
+    color: black;
+    height: 100vh;
+    
 }
 
 .title {
     font-size: 24px;
     font-weight: bold;
+}
+
+.watermark {
+    padding-bottom: 64px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
 }
