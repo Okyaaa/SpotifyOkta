@@ -3,7 +3,7 @@ import "./SearchForm.css";
 
 function SearchForm({ onSearch, handleChange }) {
   return (
-    <form onSubmit={onSearch}>
+    <form className="searchBar" onSubmit={onSearch}>
       <input type="text" id="inpuText" onChange={handleChange} required />
       <button className="buttonSearch" type="submit" value="submit">
         Search

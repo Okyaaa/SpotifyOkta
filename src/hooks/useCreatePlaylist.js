@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { addToken } from "../redux/auth-slice";
-import { saveToken } from "../redux/auth-actions";
+import { addToken } from "../redux/auth-slice";
+// import { saveToken } from "../redux/auth-actions";
 
 export default function useCreatePlaylist() {
   const BASE_URL = "https://api.spotify.com/v1";
@@ -19,9 +19,9 @@ export default function useCreatePlaylist() {
     emptyView: true,
     playlistId: "",
   });
-  const accessToken = useSelector((state) => state.token.value);
+  const accessToken = useSelector((state) => state.auth.token.token);
   const dispatch = useDispatch();
-  dispatch(saveToken(getToken));
+  // dispatch(addToken(getToken));
 
   let userId = "";
   let playlistId = "";
@@ -151,6 +151,10 @@ export default function useCreatePlaylist() {
     localStorage.removeItem("isLoggedIn");
     window.location = "http://localhost:3000/";
   };
+
+  useEffect(() => {
+    dispatch(addToken(getToken));
+  }, []);
 
   return {
     handlePlaylist,

@@ -1,27 +1,26 @@
 .container {
-  align-items: center;
-  text-align: center; 
-  /* align-content: center;
+  margin: 0px 36px;
+}
+
+.header{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
 }
 
 .create-playlist {
-  /* align-items: center;
-  text-align: center; */
   flex-direction: column;
   display: flex;
   margin: 16px auto;
 }
 
 .spotify-track {
-  /* text-align: center;
-  align-items: center; */
   flex-direction: column;
   display: flex;
-  margin: 0 auto;
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 30vh;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -50,20 +49,16 @@ button:hover {
 }
 
 .formAndView {
-  width: 660px;
-  background-color: black;
+  width: 40vh;
+  background-color: rgba(113, 113, 113, 0.2);
   flex-direction: row;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: start;
+  align-content: flex-start;
+  align-self: flex-start;
+  align-items: flex-start;
   border-radius: 10px;
+  padding: 8px 24px;
   margin: 16px 0px;
-  padding: 8px 8px;
-}
-
-.twoSided {
-  flex-direction: row;
-  display: flex;
 }
 
 .playlistTrack {
@@ -74,4 +69,30 @@ button:hover {
   font-size: 24px;
   color: white;
   font-weight: bold;
+}
+
+.searchTitle {
+  font-size: 48px;
+  color: white;
+  font-weight: 600;
+}
+
+.listOf-track {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* align-self: center; */
+  justify-content: space-between;
+  margin: 0px 36px;
+}
+
+.searchBar {
+  flex-direction: row;
+  display: flex;
+}
+
+.emptyResult {
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
 }
