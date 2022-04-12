@@ -32,6 +32,7 @@ function Spotify() {
 
       <div className="formAndView">
         <div className="create-playlist">
+          <p className="createTitle">Create Playlist</p>
           <PlaylistForm
             onCreate={handlePlaylist}
             handleChangeTitle={handleForm}

@@ -57,7 +57,7 @@ button:hover {
   align-self: flex-start;
   align-items: flex-start;
   border-radius: 10px;
-  padding: 8px 24px;
+  padding: 4px 24px;
   margin: 16px 0px;
 }
 
@@ -94,5 +94,11 @@ button:hover {
   font-size: 48px;
   color: white;
   text-align: center;
+  font-weight: 600;
+}
+
+.createTitle {
+  font-size: 24px;
+  color: white;
   font-weight: 600;
 }
