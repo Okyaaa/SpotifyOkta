@@ -2,7 +2,7 @@ import "./Home.css";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { authentication } from "../../redux/auth-actions";
-import { addToken, isLoggedIn } from "../../redux/auth-slice";
+import { addToken, isLogin } from "../../redux/auth-slice";
 
 function Home() {
   const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
@@ -15,6 +15,7 @@ function Home() {
 
   const isAuth = () => {
     window.location = AUTH_URL;
+    // dispatch(isLogin())
     localStorage.setItem("isLoggedIn", true);
   };
 

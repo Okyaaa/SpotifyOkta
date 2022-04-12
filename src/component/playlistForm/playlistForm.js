@@ -7,6 +7,7 @@ function PlaylistForm({ onCreate, handleChangeDesc, handleChangeTitle }) {
       <div className="form-text">
         <label htmlFor="title">
           Title
+          <br></br>
           <input
             type="text"
             id="title"
@@ -21,6 +22,7 @@ function PlaylistForm({ onCreate, handleChangeDesc, handleChangeTitle }) {
       <div className="form-text">
         <label htmlFor="description">
           Description
+          <br></br>
           <input
             type="text"
             id="description"

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 export default function useSearch() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const accessToken = useSelector((state) => state.token.value);
+  const accessToken = useSelector((state) => state.auth.token.token);
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
