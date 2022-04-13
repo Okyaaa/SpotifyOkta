@@ -1,9 +1,12 @@
 .Card {
-    margin: 20px;
-    text-align: center;
-    flex-direction: row;
-    width: 350px;
-    height: 500px;
+    margin: 16px;
+    padding: 0px 32px;
+    text-align: start;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    width: 500px;
+    height: 150px;
     background-color: rgba(113, 113, 113, 0.2);
     border-radius: 10px;
 }
@@ -13,14 +16,14 @@
 }
 
 .Card img {
-    margin-top: 20px;
     border-radius: 10px;
-    width: 300px;
-    height: 300px;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
 }
 
 .text-component {
-    margin-top: 4px;
+    margin: 4px 24px;
 }
 
 .text-component p {

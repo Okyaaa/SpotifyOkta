@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 export default function useSearch() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+  const [dataSlice, setDataSlice] = useState([]);
   const accessToken = useSelector((state) => state.auth.token.token);
 
   const handleChange = (event) => {
@@ -28,6 +29,7 @@ export default function useSearch() {
           const data = response.data.tracks.items;
           console.log(data);
           setSearchResult(data);
+          setDataSlice(data);
         })
         .catch((error) => {
           console.log(error);
@@ -40,6 +42,7 @@ export default function useSearch() {
 
   return {
     searchResult,
+    dataSlice,
     handleChange,
     onSearch,
   };

@@ -26,6 +26,7 @@ export default function useCreatePlaylist() {
   let userId = "";
   let playlistId = "";
   let newPlaylistId = "";
+  let responseCreate = "";
 
   const handleSelected = (uri) => {
     setIsSelected((oldArray) => oldArray.filter((id) => id !== uri));
@@ -55,7 +56,10 @@ export default function useCreatePlaylist() {
       await createPlaylist();
       newPlaylistId = playlistId.replace("spotify:playlist:", "");
       await addSongPlaylist();
-      console.log(playlistId);
+      console.log(responseCreate);
+      if(responseCreate === 201) {
+        alert("Playlist Created");
+      }
     }
   };
 
@@ -102,6 +106,7 @@ export default function useCreatePlaylist() {
       );
       console.log(create.data);
       playlistId = create.data.uri;
+      responseCreate = create.status;
       setCheck({
         playlistId: create.data.uri,
       });
