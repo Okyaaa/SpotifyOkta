@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".tsx", ".ts"] }],
     "linebreak-style": 0,
     quotes: [2, "double", { avoidEscape: true }],
     "no-use-before-define": ["error", { functions: false, classes: false, variables: false }],

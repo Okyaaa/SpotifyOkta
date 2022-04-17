@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import Home from "../pages/home/Index";
 import Spotify from "../pages/spotify/Spotify"
-import { useSelector } from "react-redux";
 
 function AppRouter() {
   // const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
