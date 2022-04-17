@@ -1,9 +1,15 @@
-import React from "react";
+import React, { ChangeEventHandler, FormEventHandler } from "react";
 import "./PlaylistForm.css";
 
-function PlaylistForm({ onCreate, handleChangeDesc, handleChangeTitle }) {
+type Props = {
+  onCreate: FormEventHandler<HTMLFormElement>,
+  handleChangeDesc: ChangeEventHandler<HTMLInputElement>,
+  handleChangeTitle: ChangeEventHandler<HTMLInputElement>,
+}
+
+function PlaylistForm(props: Props) {
   return (
-    <form className="form" onSubmit={onCreate}>
+    <form className="form" onSubmit={props.onCreate}>
       <div className="form-text">
         <label htmlFor="title">
           Title
@@ -12,7 +18,7 @@ function PlaylistForm({ onCreate, handleChangeDesc, handleChangeTitle }) {
             type="text"
             id="title"
             name="title"
-            onChange={handleChangeTitle}
+            onChange={props.handleChangeTitle}
             minLength={10}
             required
           />
@@ -27,7 +33,7 @@ function PlaylistForm({ onCreate, handleChangeDesc, handleChangeTitle }) {
             type="text"
             id="description"
             name="description"
-            onChange={handleChangeDesc}
+            onChange={props.handleChangeDesc}
             required
           />
         </label>
