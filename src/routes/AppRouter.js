@@ -9,8 +9,7 @@ import Home from "../pages/home/Index";
 import Spotify from "../pages/spotify/Spotify"
 
 function AppRouter() {
-  // const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  // console.log("islogged in router = ", isLoggedIn)
+
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   return (
     <Router>

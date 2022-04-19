@@ -21,7 +21,7 @@ function Spotify() {
   } = useCreatePlaylist();
 
   const [pageNumber, setPageNumber] = useState(0);
-  const dataPerPage = 6;
+  const dataPerPage = 10;
   const pageVisited = pageNumber * dataPerPage;
   const displayData = dataSlice
     .slice(pageVisited, pageVisited + dataPerPage)
@@ -63,7 +63,7 @@ function Spotify() {
         </button>
       </div>
 
-      <div className="formAndView">
+      {/* <div className="formAndView">
         <div className="create-playlist">
           <p className="createTitle">Create Playlist</p>
           <PlaylistForm
@@ -72,7 +72,7 @@ function Spotify() {
             handleChangeDesc={handleForm}
           />
         </div>
-      </div>
+      </div> */}
       <div className="spotify-track">
         <p className="searchTitle">Search Result</p>
 
