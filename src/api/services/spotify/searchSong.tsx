@@ -22,7 +22,7 @@ const searchSong = async (
         type: "track",
       },
     });
-    data = result.data.tracks.items;
+    data = result;
     console.log("data", data);
   } catch (error) {
     console.log(error);

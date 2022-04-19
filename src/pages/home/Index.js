@@ -2,6 +2,7 @@ import "./Home.css";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToken } from "../../redux/auth-slice";
+import tapeImage from "../../assets/home/tape.png";
 
 function Home() {
   const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
@@ -16,15 +17,18 @@ function Home() {
     localStorage.setItem("isLoggedIn", true);
   };
 
-  
   return (
     <div className="Home">
-      <div className="header"></div>
+      <div className="centerImage">
+        <img className="tapeImage" src={tapeImage}/>
+      </div>
       <div className="content">
-        <p className="title">
-          Klik button dibawah untuk login bestie &#129409;
-        </p>
-        <button type="submit" onClick={isAuth}>
+        <div className="title-ofContent">
+          <p className="titleHome">SPOTIFY</p>
+          <p className="titleHomeChild">but its 90's</p>
+          <p className="titleDescription">Listening to your favourite musics,<br/> don’t be mad, let it flow, be happy <br/> and have fun :D</p>
+        </div>
+        <button className="buttonLogin" type="submit" onClick={isAuth}>
           Click here to login
         </button>
       </div>

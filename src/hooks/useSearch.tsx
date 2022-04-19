@@ -19,8 +19,8 @@ export default function useSearch() {
     if (accessToken !== "") {
       searchSong(url, searchQuery, accessToken)
         .then(response => {
-          setSearchResult(response);
-          setDataSlice(response);
+          setSearchResult(response?.data.tracks.items);
+          setDataSlice(response?.data.tracks.items);
         });
       console.log("data slice = ", dataSlice);
     } else {

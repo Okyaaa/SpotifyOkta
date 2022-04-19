@@ -3,6 +3,7 @@
 }
 
 .header{
+  padding-top: 32px;
   flex-direction: row;
   display: flex;
   justify-content: space-between;
@@ -121,4 +122,8 @@ button:hover {
   width: 20%;
   display: flex;
   justify-content: center;
+}
+
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: #6dc870;
 }
