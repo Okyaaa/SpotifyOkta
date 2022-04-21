@@ -1,6 +1,16 @@
 @font-face {
-    src: url(fonts/Evil-Empire.otf);
+    src: url(fonts/Mainstay.ttf);
     font-family: nos;
+}
+
+@font-face {
+    src: url(fonts/Evil-Empire.otf);
+    font-family: evil;
+}
+
+@font-face {
+    src: url(fonts/Gloom.ttf);
+    font-family: gloom;
 }
 
 p {
@@ -8,48 +18,56 @@ p {
     color: #EAD32B;
 }
 
+
 .Home {
     flex-direction: column;
     justify-content: space-between;
     display: flex;
-    color: black;
-    height: 100vh;
+    background-color: linear-gradient(90deg, #4DBD95 50%, #EAD32B 50%);
     background-image: linear-gradient(90deg, #4DBD95 50%, #EAD32B 50%);
-    font-family: nos;
     padding-left: 128px;
     padding-right: 128px;
+    height: 100%;
+    overflow: hidden;
 }
 
 .content {
-    margin-top: 20vh;
-    margin-left: 2%;
+    margin-left: 1%;
     z-index: 1;
     justify-content: space-between;
 }
 
 .titleHome {
-    font-size: 256px;
+    font-family: evil;
+    font-size: 210px;
 }
 
 .titleHomeChild {
+    font-family: nos;
     font-size: 64px;
 }
 
 .titleDescription {
+    font-family: evil;
     padding: 64px 0px;
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .centerImage {
-    position: absolute;
-    right: 20vh;
-    bottom: 0vh;
-    z-index: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    align-content: center;
+    z-index: 1;
 }
 
 .tapeImage {
-    width: 970px;
-    height: 970px;
+    position: absolute;
+    padding-top: 5%;
+    padding-left: 30%;
+    width: 45%;
+    height:90%;
 }
 
 .watermark {
@@ -60,9 +78,9 @@ p {
 }
 
 .buttonLogin {
-    background-image: linear-gradient(to right, #EEBEFF, #EAD32B);
+    background-color: #EAD32B;
     border-color: white;
-    font-family: nos;
+    font-family: evil;
     color: #319741;
 }
 

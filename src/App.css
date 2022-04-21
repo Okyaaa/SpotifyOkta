@@ -1,9 +1,18 @@
-.App {
-  /* text-align: center; */
-  flex-direction: column;
+#root {
+  height: 100%;
   width: 100%;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
   /* background: linear-gradient(#490E0F,#121212); */
-  min-height: 100vh;
-  background-color: #EAD32B;
+  /* background-color: #EAD32B; */
 }
 
