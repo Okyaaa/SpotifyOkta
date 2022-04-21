@@ -1,0 +1,10 @@
+
+.songInformation {
+    justify-content: center;
+    align-items: center;
+}
+
+.songImage {
+    width: 80px; 
+    height: 80px;
+}

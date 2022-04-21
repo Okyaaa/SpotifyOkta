@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import CardSong from "../component/cardSong/CardSong";
 
-test("all counter elements are rendered", () => {
+test("all elements are rendered", () => {
     render(<CardSong
         url={"https://media.giphy.com/media/1vYThCrZAsQU36nqkv/giphy.gif"}
         albumName="albumName"

@@ -6,7 +6,6 @@ import searchSong from "../api/services/spotify/searchSong";
 export default function useSearch() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<Object | undefined>([]);
-  const [dataSlice, setDataSlice] = useState<Object | undefined>([]);
   const url = "https://api.spotify.com/v1/search";
   const accessToken = useSelector(selectToken);
 
@@ -20,9 +19,7 @@ export default function useSearch() {
       searchSong(url, searchQuery, accessToken)
         .then(response => {
           setSearchResult(response?.data.tracks.items);
-          setDataSlice(response?.data.tracks.items);
         });
-      console.log("data slice = ", dataSlice);
     } else {
       alert("Login first");
     }
@@ -31,7 +28,6 @@ export default function useSearch() {
 
   return {
     searchResult,
-    dataSlice,
     handleChange,
     onSearch,
   };
