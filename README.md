@@ -22,6 +22,14 @@ Spotifyoktaaa is a  simple spotify website application using React JS with 90's 
   *  Pagination : Users don't have to scroll when finding a match song
   *  Modal : Modal will pop up after users click create playlist button and view playlist button
     * Form and playlist will show in pop up modal
+# Technical Requirements
+- [x] Hooks
+- [x] Flex & Grid
+- [x] Typescript
+- [x] Redux
+- [x] Eslint
+- [x] Testing
+- [x] Documentation
 
 # Installation
 1. Clone the repository
