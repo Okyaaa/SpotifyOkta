@@ -90,7 +90,6 @@ function Spotify() {
     );
     recentlyPlaying(process.env.REACT_APP_SPOTIFY_URL, accessToken.value).then(
       (response) => {
-        console.log(response);
         setRecentlySong(response);
       }
     );
