@@ -1,9 +1,8 @@
 import addSongPlaylist from "api/services/spotify/addSong";
 import createPlaylist from "api/services/spotify/createPlaylist";
-import getUserId from "api/services/spotify/user";
 import { ChangeEvent, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectToken } from "../redux/auth-slice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectedSong, unSelect, selectData } from "../redux/auth-slice";
 
 type NewPlaylist = {
   title: string;
@@ -12,27 +11,23 @@ type NewPlaylist = {
 };
 
 export default function useCreatePlaylist() {
-  const BASE_URL = "https://api.spotify.com/v1";
-  const [isSelected, setIsSelected] = useState<Array<string>>([]);
   const [newPlaylist, setNewPlaylist] = useState<NewPlaylist>({
     title: "",
     description: "",
     viewPlaylist: [],
   });
-  const accessToken = useSelector(selectToken);
+  const dispatch = useDispatch();
+  const accessToken = useSelector(selectData);
 
-  let userId: string | undefined = "";
   let playlistId: string | undefined = "";
   let responseCreate: number | undefined = 0;
 
   const handleSelected = (uri: string) => {
-    setIsSelected((oldArray) => oldArray.filter((id) => id !== uri));
-    console.log(`Present id = ${isSelected}`);
+    dispatch(unSelect(uri));
   };
 
   const handleNotSelected = (uri: string) => {
-    setIsSelected((oldArray) => [...oldArray, uri]);
-    console.log(`Present id = ${isSelected}`);
+    dispatch(selectedSong(uri));
   };
 
   const handleForm = (event: ChangeEvent<HTMLInputElement>) => {
@@ -42,33 +37,29 @@ export default function useCreatePlaylist() {
 
   const handlePlaylist = async (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    if (accessToken === null) {
+    if (accessToken.value === null) {
       // eslint-disable-next-line no-alert
       alert("Login first");
-    } else if (isSelected.length === 0) {
+    } else if (accessToken.trackId.length === 0) {
       alert("Select song first");
     } else {
-      await getUserId(BASE_URL, accessToken).then((response) => {
-        console.log(response?.id);
-        userId = response?.id;
-        console.log("getUserid = ", userId);
-      });
-      console.log("create playlist");
       await createPlaylist(
-        BASE_URL,
-        userId,
+        process.env.REACT_APP_SPOTIFY_URL,
+        accessToken.userId,
         newPlaylist.title,
         newPlaylist.description,
-        accessToken
-      ).then((response => {
-        console.log(response)
+        accessToken.value
+      ).then((response) => {
         playlistId = response?.id;
-      }))
-      await addSongPlaylist(BASE_URL, playlistId, isSelected, accessToken)
-      .then((response => {
-        responseCreate = response?.status;
-      }));
-      console.log(responseCreate);
+      });
+      await addSongPlaylist(
+        process.env.REACT_APP_SPOTIFY_URL,
+        playlistId,
+        accessToken.trackId,
+        accessToken.value
+      ).then((response) => {
+        responseCreate = response;
+      });
       if (responseCreate === 201) {
         alert("Playlist Created");
       }
@@ -92,6 +83,5 @@ export default function useCreatePlaylist() {
     handleSelected,
     isLoggedOut,
     newPlaylist,
-    isSelected,
   };
 }

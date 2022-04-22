@@ -3,12 +3,12 @@ import axios from "axios";
 type Data = {
     name: string,
     description: string,
-    id: string | undefined,
+    id: string 
   };
 
 const createPlaylist = async (
-  url: string,
-  userId: string | undefined,
+  url: string | undefined,
+  userId: string,
   name: string,
   description: string,
   accessToken: string

@@ -1,10 +1,11 @@
 import React from "react";
 import "./songInfo.css";
 type Parameter = {
-  url: string;
-  alt: string;
-  artistName: string;
-  albumName: string;
+  url: string,
+  alt: string,
+  id:string,
+  artistName: string,
+  trackName: string;
 };
 
 const SongInformation = (props: Parameter) => {
@@ -12,7 +13,7 @@ const SongInformation = (props: Parameter) => {
     <div className="songInformation">
       <img src={props.url} alt={props.alt} className="songImage"/>
       <div className="text-component">
-        <p className="album">{props.albumName}</p>
+        <p className="track">{props.trackName}</p>
         <p>{props.artistName}</p>
       </div>
     </div>

@@ -1,31 +1,37 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 
-type auththentication = {
-  value: string,
-  isLoggedin: boolean
-}
-
-const initialState: auththentication = {
-  value: "",
-  isLoggedin: false
+type Data = {
+  value: string;
+  userId: string;
+  trackId: Array<string>;
+};
+const initialState: Data = {
+  value:"",
+  userId:"",
+  trackId: [],
 };
 
-export const authSlice = createSlice({
+export const dataSlice = createSlice({
   name: "authentication",
   initialState,
   reducers: {
-    addToken(state: auththentication, action: PayloadAction<string>) {
+    addToken(state: Data, action: PayloadAction<string>) {
       state.value = action.payload;
     },
-    isLogin(state: auththentication, action: PayloadAction<boolean>) {
-      state.isLoggedin = action.payload
+    selectedSong(state: Data, action: PayloadAction<string>) {
+      //   state.id = state.id.filter((id) => id !== action.payload)
+      state.trackId.push(action.payload);
     },
-  }
+    unSelect(state: Data, action: PayloadAction<string>) {
+      state.trackId = state.trackId.filter((id) => id != action.payload);
+    },
+    addUserId(state: Data, action: PayloadAction<string>) {
+      state.userId = action.payload
+    }
+  },
 });
 
-export const { addToken, isLogin } = authSlice.actions;
-export const selectToken = (state: RootState) => state.authReducer.value;
-export const selectLogin = (state: RootState) => state.authReducer.isLoggedin;
-export default authSlice.reducer;
-
+export const { addToken, selectedSong, unSelect, addUserId } = dataSlice.actions;
+export const selectData = (state: RootState) => state.dataReducer;
+export default dataSlice.reducer;

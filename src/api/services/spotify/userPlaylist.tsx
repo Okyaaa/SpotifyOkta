@@ -1,15 +1,9 @@
 import axios from "axios";
 
 type release = {
-  albums: {
-    items: Array<Object>
-  };
+  items: Object[]
 };
-
-const newRelease = async (
-  url: string,
-  accessToken: string
-) => {
+const userPlaylist = async (url: string, accessToken: string) => {
   let data;
   try {
     const result = await axios.get<release>(url, {
@@ -17,14 +11,15 @@ const newRelease = async (
         Authorization: `Bearer ${accessToken}`,
       },
       params: {
-        limit: 24,
+        limit: 10,
       },
     });
-    data = result.data.albums.items;
+    data = result.data.items;
+    console.log(data)
   } catch (error) {
     console.log(error);
   }
   return data;
 };
 
-export default newRelease;
+export default userPlaylist;

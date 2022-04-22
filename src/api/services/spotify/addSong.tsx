@@ -8,7 +8,7 @@ type Data = {
 }
 
 const addSongPlaylist = async (
-  url: string,
+  url: string | undefined,
   id: string | undefined,
   selected: Array<string>,
   accessToken: string
@@ -28,7 +28,7 @@ const addSongPlaylist = async (
         },
       }
     );
-    data = add;
+    data = add.status;
   } catch (error) {
     console.log(error);
   }

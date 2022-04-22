@@ -1,10 +1,15 @@
 
 .songInformation {
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    align-content: space-around;
+    align-self: center;
+    text-align: center;
+    padding-left: 5%;
 }
 
 .songImage {
-    width: 80px; 
-    height: 80px;
+    width: 14%; 
+    height: 14%;
 }
