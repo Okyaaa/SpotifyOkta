@@ -4,7 +4,7 @@ Spotifyoktaaa is a  simple spotify website application using React JS with 90's 
 
 # Requirement Features
   * Login : Users login using thier spotify account
-  * Private route:  Users cannot access create-playlist before lgin
+  * Private route:  Users cannot access create-playlist before login
   * Search song : Users can search every song on spotify after submit the title of the song
   * Song details : Users can see the title, artist, and duration
   * Selected song : Users can select and deselect the song that they want to add to their playlist
