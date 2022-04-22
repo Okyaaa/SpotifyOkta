@@ -73,7 +73,7 @@ export default function useCreatePlaylist() {
 
   const isLoggedOut = () => {
     localStorage.removeItem("isLoggedIn");
-    window.location.href = "http://localhost:3000/";
+    window.location.href = "https://spotifyoktaaa.vercel.app";
   };
 
   return {
