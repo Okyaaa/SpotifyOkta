@@ -14,7 +14,7 @@ Spotifyoktaaa is a  simple spotify website application using React JS with 90's 
     * User should input playlist title minimum at 10 character
     * There will be alers if users success to create their playlist
   # Bonus Features
-  *  View playlist: User can view their own playlist
+  *  View playlists: User can view their own playlists
   *  New Release : User can see the new release album, the feature show after login in Create Playlist page
   *  Logout : User can logout from the website
   *  Recently played song : In the bottom of the website there will be a recently played song
