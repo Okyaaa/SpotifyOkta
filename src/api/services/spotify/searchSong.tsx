@@ -20,14 +20,13 @@ const searchSong = async (
       params: {
         q: `${searchQuery}`,
         type: "track",
+        limit: 24
       },
     });
     data = result;
-    console.log("data", data);
   } catch (error) {
     console.log(error);
   }
-  console.log("at api", data);
   return data;
 };
 

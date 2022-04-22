@@ -43,7 +43,7 @@ p {
 }
 
 .titleHomeChild {
-    font-family: nos;
+    font-family: evil;
     font-size: 64px;
 }
 
@@ -70,11 +70,16 @@ p {
     height:90%;
 }
 
+
 .watermark {
     padding-bottom: 64px;
-    font-size: 18px;
-    color: white;
+    font-size: 24px;
     text-align: center;
+    font-family: 'Open Sans';
+}
+
+.watermark p {
+    color: white;
 }
 
 .buttonLogin {

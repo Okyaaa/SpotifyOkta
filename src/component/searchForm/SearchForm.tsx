@@ -8,10 +8,11 @@ type Props = {
 
 function SearchForm(props: Props) {
   return (
-    <form className="searchBar" onSubmit={props.onSearch}>
+    <form data-testid="form" className="searchBar" onSubmit={props.onSearch}>
       <input
         type="text"
         id="inpuText"
+        data-testid="search-input"
         onChange={props.handleChange}
         placeholder="Search..."
         required

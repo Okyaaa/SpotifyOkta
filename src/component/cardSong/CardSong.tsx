@@ -25,7 +25,7 @@ function CardSong(props: Parameter) {
       <div className="text-component">
         <p className="track">{props.trackName}</p>
         <p className="artistName">{props.artistName}</p>
-        <p className="duration">{millisToMinutesAndSeconds(props.duration)}</p>
+        <p className="duration">{props.duration ?  millisToMinutesAndSeconds(props.duration) : ""}</p>
       </div>
       <div className="button-component">
         <button
@@ -38,6 +38,10 @@ function CardSong(props: Parameter) {
       </div>
     </div>
   );
+}
+
+CardSong.defaultProps = {
+  duration: "hello"
 }
 
 export default CardSong;
