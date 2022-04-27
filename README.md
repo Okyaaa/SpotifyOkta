@@ -37,5 +37,5 @@ Spotifyoktaaa is a  simple spotify website application using React JS with 90's 
 2. Install the dependencies in the project directory
 ### `npm install`
 3. Start the app
-### `npm start` or `npm run start'
+### `npm start or npm run start`
 
