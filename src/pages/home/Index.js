@@ -20,6 +20,7 @@ function Home() {
     "playlist-modify-private",
     "user-read-currently-playing",
     "user-read-recently-played",
+    "playlist-read-private"
   ];
   const AUTH_URL = `${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&response_type=token&show_dialog=true`;
   const dispatch = useDispatch();
