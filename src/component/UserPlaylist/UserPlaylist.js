@@ -31,7 +31,7 @@ export default function UserPlaylist() {
               <TableCell>
                 <img
                   style={{ width: 70, heigh: 70, borderRadius: 4 }}
-                  src={item.images[0].url}
+                  src={item.images[0]?.url}
                 ></img>
               </TableCell>
               <TableCell component="th" scope="row">
